@@ -241,6 +241,12 @@ async function updateWelcomeMessage(msg) {
 				data => {
 					const newQuestion = data.executeCallData.text;
 
+
+					if(newQuestion.length > 60) {
+						bot.sendMessage(userId, `Il limite di caratteri per una domanda è 60. Riarrangiala o digita /clear`);
+						return { repeat: true };
+					}
+
 					if (FAQS.map(faq => faq.question).includes(newQuestion)) {
 						bot.sendMessage(userId, `Questa FAQ è già presente, ritenta o digita /clear`);
 						return { repeat: true };
@@ -353,7 +359,7 @@ async function updateWelcomeMessage(msg) {
 	});
 
 	// show the faq list to an user
-	bot.onText(/\/showfaqlist/, msg => {
+	bot.onText(/\/showfaqlist/, async msg => {
 
 		if (msg.text.match(/\/setwelcomemessage/)) {
 			return;
@@ -364,9 +370,14 @@ async function updateWelcomeMessage(msg) {
 		const ik = new InlineKeyboard();
 
 		const questions = FAQS.map(faq => faq.question);
+
 		questions.forEach(question => ik.addRow({ text: question, callback_data: question }));
 
-		bot.sendMessage(userId, `Scegli una domanda per la quale vuoi una risposta`, ik.build());
+		try {
+			bot.sendMessage(userId, `Scegli una domanda per la quale vuoi una risposta`, ik.build());
+		} catch (e) {
+			console.log(e)
+		}
 	});
 
 	// allow to change the welcome Message

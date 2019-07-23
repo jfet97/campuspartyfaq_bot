@@ -1,9 +1,9 @@
 {"telegramID":82262321,"collection":"admins","isSuper":false,"_id":"1b2AkhtlA3gDPphx"}
 {"question":"Posso uscire quando voglio?","answer":"Certo, ma se dormi in tenda ricordati di rientrare entro la mezzanotte!","collection":"faqs","_id":"73oNRMPVg1t6gWHA"}
+{"question":"Come posso chiudere per bene la tenda?","answer":"Un lucchetto sufficientemente grande in modo che passi tra le due cerniere.","collection":"faqs","_id":"MkImbWanDE5lXODU"}
 {"telegramID":650789883,"collection":"admins","isSuper":true,"_id":"N3upu7H2rKbMlef7"}
-{"message":"Benvenuto, digita /showFAQList per l'elenco delle FAQ e goditi il soggiorno da campusero!!!","_id":"welcomeMessage"}
-{"message":"Benvenuto, digita /showFAQList per l'elenco delle FAQ e goditi il soggiorno da campusero!!!!;","_id":"welcomeMessage"}
-{"question":"Che ore sono?","answer":"Le ore di ieri a quest'ora","collection":"faqs","_id":"QJYMg7Wkw6u2qSmc"}
-{"$$deleted":true,"_id":"QJYMg7Wkw6u2qSmc"}
-{"telegramID":12445,"isSuper":false,"collection":"admins","_id":"DALiOawFGReOrjV7"}
-{"$$deleted":true,"_id":"DALiOawFGReOrjV7"}
+{"question":"Sarà presente un guardaroba?","answer":"Certo! Il guardaroba aprirà alle ore 10:00 per poi chiudere alle ore 22:00, e sarà liberamente usufruibile da tutti i presenti.","collection":"faqs","_id":"ZKz97vUsUsi8N0k8"}
+{"question":"Saranno fruibili degli asciugacapelli?","answer":"No, purtroppo devi portarne uno tuo oppure chiederlo in prestito ad una compagna di avventura!","collection":"faqs","_id":"fFpTxxZ2DKfW5dy3"}
+{"telegramID":16555276,"isSuper":true,"collection":"admins","_id":"hKCJcYMXq0RaYzj8"}
+{"question":"Sono pronto/a per il Campus Party?","answer":"Assicurati di aver letto con attenzione tutti i punti della guida del campusero che puoi trovare qua: https://italia.campus-party.org/guida-del-campusero/ e potrai stare tranquillo/a!","collection":"faqs","_id":"jIh6Qt673N0uR8kx"}
+{"message":"Benvenuto, digita /showfaqlist per l'elenco delle FAQ e goditi il soggiorno da campusero!","_id":"welcomeMessage"}

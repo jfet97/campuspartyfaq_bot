@@ -156,7 +156,7 @@ async function updateWelcomeMessage(msg) {
 					}
 				},
 				async data => {
-					const isSuper = data.executeCallData.text === 'y' ? true : false;
+					const isSuper = (data.executeCallData.text === 'Y' || data.executeCallData.text === 'y');
 
 					try {
 						await addAdmin((new Admin(data.previousResult.telegramID, isSuper)));

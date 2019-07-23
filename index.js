@@ -115,6 +115,8 @@ async function updateWelcomeMessage(msg) {
 	// clear flows
 	bot.onText(/\/clear/, msg => {
 
+		const userId = msg.from.id;
+
 		// is an admin? if not the user cannot use this command
 		const user = admins.find(admin => admin.telegramID === userId);
 
@@ -125,13 +127,13 @@ async function updateWelcomeMessage(msg) {
 
 		let messageToBeSent = "";
 
-		adminsAddFlow.clear(msg.from.id);
-		adminsRemoveFlow.clear(msg.from.id);
-		faqsAddFlow.clear(msg.from.id);
-		faqsRemoveFlow.clear(msg.from.id);
+		adminsAddFlow.clear(userId);
+		adminsRemoveFlow.clear(userId);
+		faqsAddFlow.clear(userId);
+		faqsRemoveFlow.clear(userId);
 		messageToBeSent += "You have successfully aborted all the operations.";
 
-		bot.sendMessage(msg.from.id, messageToBeSent);
+		bot.sendMessage(userId, messageToBeSent);
 	});
 
 	// start the adminsAddFlow flow

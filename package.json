@@ -1,0 +1,25 @@
+{
+  "name": "campuspartyfaqbot",
+  "version": "0.0.2",
+  "description": "FAQ Bot for Campus Party",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config index.js"
+  },
+  "keywords": [
+    "bot",
+    "telegram",
+    "faq",
+    "campus",
+    "party"
+  ],
+  "author": "andrysimo1997gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "nedb-promises": "^3.0.7",
+    "node-telegram-bot-api": "^0.30.0",
+    "node-telegram-keyboard-wrapper": "^2.0.1",
+    "ntfm": "0.0.12"
+  }
+}

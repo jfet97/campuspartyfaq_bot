@@ -115,6 +115,14 @@ async function updateWelcomeMessage(msg) {
 	// clear flows
 	bot.onText(/\/clear/, msg => {
 
+		// is an admin? if not the user cannot use this command
+		const user = admins.find(admin => admin.telegramID === userId);
+
+		if (!user) {
+			bot.sendMessage(msg.from.id, 'Non sei autorizzato ad eseguire questa operazione!');
+			return;
+		}
+
 		let messageToBeSent = "";
 
 		adminsAddFlow.clear(msg.from.id);
@@ -242,7 +250,7 @@ async function updateWelcomeMessage(msg) {
 					const newQuestion = data.executeCallData.text;
 
 
-					if(newQuestion.length > 60) {
+					if (newQuestion.length > 60) {
 						bot.sendMessage(userId, `Il limite di caratteri per una domanda è 60. Riarrangiala o digita /clear`);
 						return { repeat: true };
 					}
@@ -448,10 +456,12 @@ async function updateWelcomeMessage(msg) {
 		const queryId = msg.id;
 
 		const chosenFAQ = FAQS.find(faq => faq.question === chosenQuestion);
-		const { answer = "" } = chosenFAQ || {};
+		const { question = "", answer = "" } = chosenFAQ || {};
 
 		bot.answerCallbackQuery(queryId)
-		bot.sendMessage(userId, answer);
+		bot.sendMessage(userId, `
+		<b>Q: ${question}</b>\nA: ${answer}
+		`, { parse_mode: "html" });
 
 	});
 
